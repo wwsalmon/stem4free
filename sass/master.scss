@@ -1,5 +1,7 @@
 $main-width: 1500px;
 $content-width: 800px;
+$main-breakpoint: 1000px;
+$mobile-breakpoint: 600px;
 
 $sz-navbar-item-margin-hor: 32px;
 $navbar-logo-height: 32px;
@@ -9,3 +11,4 @@ $navbar-logo-height: 32px;
 @import 'general';
 @import 'navbar';
 @import 'content';
+@import 'home';
