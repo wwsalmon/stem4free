@@ -12,9 +12,16 @@ wp_head();
 
 </head>
 <body>
-<div class="sz-navbar sz-template-navbar">
+<div class="sz-navbar s4f-navbar">
     <div class="sz-navbar-inner sz-navbar-right">
-        <div class="navbar-logo"><a href="<?php echo get_home_url() ?>"><?php echo get_bloginfo("name") ?></a></div>
+        <div class="navbar-logo">
+            <a href="<?php echo get_home_url() ?>">
+                <img src="<?php echo get_template_directory_uri() ?>/img/logo-small.png">
+            </a>
+            <a href="<?php echo get_home_url() ?>">
+                <span><?php echo get_bloginfo("name") ?></span>
+            </a>
+        </div>
         <input type="checkbox" id="sz-navbar-check">
         <label for="sz-navbar-check" class="sz-navbar-hamburger">☰</label>
         <div class="sz-navbar-items">
@@ -26,8 +33,3 @@ wp_head();
         </div>
     </div>
 </div>
-<script>
-    document.getElementById('hamburger').addEventListener("click",function(){
-        document.querySelector('.menu-navbar-container').classList.toggle("open");
-    });
-</script>

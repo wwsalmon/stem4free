@@ -1,6 +1,10 @@
 $main-width: 1500px;
 $content-width: 800px;
 
+$sz-navbar-item-margin-hor: 32px;
+$navbar-logo-height: 32px;
+
+@import 'colors';
 @import 'sz-navbar';
 @import 'general';
 @import 'navbar';
