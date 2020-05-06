@@ -18,15 +18,24 @@ foreach ($home_blocks as $block){
     <?php
 }
 ?>
-</div>
-    <div class="container">
-        <?php
-        if (have_posts()):
-            while (have_posts()) : the_post();
-                get_template_part("template_parts/article");
-            endwhile;
-        endif;
-        ?>
+    <div class="home-section container home-blog">
+        <div class="home-heading">
+            <div class="home-heading-topper"></div>
+            <h1>Latest Posts</h1>
+        </div>
+        <div class="home-blog-posts">
+            <?php
+            if (have_posts()):
+                while (have_posts()) : the_post();
+                    get_template_part("template_parts/article");
+                endwhile;
+            endif;
+            ?>
+            <div class="home-blog-more">
+                <a href=""><div class="home-blog-button">More Posts ></div></a>
+            </div>
+        </div>
     </div>
+</div>
 <?php
 get_footer();

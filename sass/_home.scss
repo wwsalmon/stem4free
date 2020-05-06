@@ -1,3 +1,10 @@
+@mixin button-text{
+  text-transform: uppercase;
+  font-family: "Roboto Mono";
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
 .home-hero{
   max-width: 2000px;
   width: 100%;
@@ -13,13 +20,85 @@
   margin: 64px 0;
 }
 
-.home-block{
+.home-blog-posts, .home-block{
   margin-left: auto;
   width: 100%;
   max-width: 1000px;
+}
+
+.home-blog .article-item{
+  border: 2px solid $s4f-tan;
+  margin-bottom: 24px;
+
+  .article-text{
+    padding: 24px;
+
+    a{
+      color: #000;
+
+      &:hover{
+        color: rgba(0,0,0,0.4);
+      }
+    }
+
+    h3{
+      font-family: 'Roboto Mono';
+      margin: 0 0 32px 0;
+    }
+
+    .article-author{
+      font-weight: 700;
+    }
+
+    .article-content, .article-categories{
+      display: none;
+    }
+  }
+}
+
+.home-blog-more{
+  text-align: right;
+}
+
+.home-blog-button{
+  @include button-text;
+  display: inline-block;
+  padding: 16px;
+  border: 2px solid #000;
+  color: #000;
+
+  &:hover{
+    background-color: #000;
+    color: #fff;
+  }
+
+}
+
+.home-block{
   box-sizing: border-box;
   color: #fff;
   padding: 24px;
+
+  p:first-of-type{
+    margin-top: 0;
+  }
+
+  .wp-block-button{
+    text-align: right;
+  }
+
+  .wp-block-button__link{
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 0;
+    margin-left: auto;
+    @include button-text;
+
+    &:hover{
+      background-color: #fff;
+      color: #000;
+    }
+  }
 }
 
 div.home-section:first-of-type .home-block{
@@ -40,6 +119,26 @@ div.home-section:nth-of-type(2) .home-block{
   .home-block{
     padding: 36px;
     font-size: 36px;
+  }
+
+  .home-blog-posts{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 32px;
+  }
+
+  .home-blog-more{
+    grid-column: 2;
+  }
+}
+
+@media (min-width: 800px){
+  .home-blog-posts{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .home-blog-more{
+    grid-column: 3;
   }
 }
 
