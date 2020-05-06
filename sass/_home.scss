@@ -29,6 +29,7 @@
 .home-blog .article-item{
   border: 2px solid $s4f-tan;
   margin-bottom: 24px;
+  transition: transform 0.2s ease;
 
   .article-text{
     padding: 24px;
@@ -54,6 +55,10 @@
       display: none;
     }
   }
+
+  &:hover{
+    transform: scale(1.05);
+  }
 }
 
 .home-blog-more{
@@ -78,12 +83,10 @@
   box-sizing: border-box;
   color: #fff;
   padding: 24px;
-
-  p:first-of-type{
-    margin-top: 0;
-  }
+  line-height: 1.5;
 
   .wp-block-button{
+    margin-top: 32px;
     text-align: right;
   }
 
@@ -97,6 +100,15 @@
     &:hover{
       background-color: #fff;
       color: #000;
+    }
+  }
+
+  .wp-block-column p{
+    margin: 0;
+    line-height: 1.0;
+
+    &:not(.has-custom-weight){
+      opacity: 0.4;
     }
   }
 }

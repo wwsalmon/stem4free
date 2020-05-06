@@ -30,7 +30,7 @@
         ?>
 
         <div class="article-author"><span><?php echo sz_author_with_link(get_the_author_meta("ID")); ?></span></div>
-        <div class="article-date"><span><?php the_time("F d, Y"); ?></span></div>
+        <div class="article-date"><span><?php the_time("F n, Y"); ?></span></div>
         <div class="article-content"><?php echo sz_get_snippet(sz_stripall(get_the_content()), 100) ?></div>
     </div>
 </div>

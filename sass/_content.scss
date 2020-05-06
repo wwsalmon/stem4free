@@ -1,4 +1,6 @@
 .content-container{
+  padding-top: 32px;
+
   p, ul, ol, blockquote, h2, h3, h4, h5, h6{
     max-width: $content-width;
     margin-left: auto;
