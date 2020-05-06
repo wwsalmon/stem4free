@@ -1,7 +1,14 @@
 <?php get_header();
 ?>
 <div class="home-hero" style="background-image: url('<?php echo get_theme_mod('s4f-home-image'); ?>');"></div>
-<div class="home-sections">
+
+    <div class="home-top container">
+        <div class="home-block">
+
+        </div>
+    </div>
+
+    <div class="home-sections">
 <?php
 $home_blocks = get_posts(array("post_type" => "home_blocks"));
 foreach ($home_blocks as $block){

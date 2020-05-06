@@ -16,6 +16,32 @@
   margin: 0 auto;
 }
 
+.home-top{
+  .home-block{
+    background-color: $s4f-tan;
+    margin-left: 0;
+    color: #000;
+  }
+
+  .wp-block-image{
+    margin-left: 0;
+  }
+
+  img{
+    max-height: 160px;
+  }
+
+  a.wp-block-button__link{
+    border: 2px solid #000;
+    color: #000;
+
+    &:hover{
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}
+
 .home-section{
   margin: 64px 0;
 }
@@ -76,7 +102,6 @@
     background-color: #000;
     color: #fff;
   }
-
 }
 
 .home-block{
@@ -142,6 +167,10 @@ div.home-section:nth-of-type(2) .home-block{
   .home-blog-more{
     grid-column: 2;
   }
+
+  .home-top{
+    margin-top: 32px;
+  }
 }
 
 @media (min-width: 800px){
@@ -155,6 +184,10 @@ div.home-section:nth-of-type(2) .home-block{
 }
 
 @media (min-width: $main-breakpoint){
+  .home-top{
+    margin-top: -40vh;
+  }
+
   .home-section{
     display: flex;
   }
