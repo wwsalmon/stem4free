@@ -15,3 +15,8 @@
     padding-left: 2em;
   }
 }
+
+.blog-back{
+  @include button-text;
+  font-size: 16px;
+}
