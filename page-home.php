@@ -40,7 +40,7 @@
                 endif;
                 ?>
                 <div class="home-blog-more">
-                    <a href=""><div class="home-blog-button">More Posts ></div></a>
+                    <a href="<?php echo get_site_url()?>/blog"><div class="home-blog-button">More Posts ></div></a>
                 </div>
             </div>
         </div>

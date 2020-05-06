@@ -1,7 +1,7 @@
 <?php get_header();
 ?>
     <div class="container content-container single-container">
-        <div class="blog-back"><a href="">< Back to All Posts</a></div>
+        <div class="blog-back"><a href="<?php echo get_site_url()?>/blog">< Back to All Posts</a></div>
         <?php
         while (have_posts()) : the_post(); ?>
             <h1><?php the_title(); ?></h1>
