@@ -1,10 +1,9 @@
 <?php
 
 require('inc/register-menus.php');
-
 require('inc/helper-functions.php');
-
 require('inc/customizer.php');
+require('inc/home-cpt.php');
 
 function s4f_script_enqueue()
 {

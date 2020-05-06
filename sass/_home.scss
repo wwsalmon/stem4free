@@ -9,8 +9,66 @@
   margin: 0 auto;
 }
 
+.home-section{
+  margin: 64px 0;
+}
+
+.home-block{
+  margin-left: auto;
+  width: 100%;
+  max-width: 1000px;
+  box-sizing: border-box;
+  color: #fff;
+  padding: 24px;
+}
+
+div.home-section:first-of-type .home-block{
+  background-color: $s4f-purple;
+}
+
+div.home-section:nth-of-type(2) .home-block{
+  background-color: $s4f-medgreen;
+}
+
+.home-heading-topper{
+  width: 64px;
+  height: 4px;
+  background-color: #000;
+}
+
+@media (min-width: $mobile-breakpoint){
+  .home-block{
+    padding: 36px;
+    font-size: 36px;
+  }
+}
+
+@media (min-width: $main-breakpoint){
+  .home-section{
+    display: flex;
+  }
+
+  h1{
+    font-size: 56px;
+    min-width: 240px;
+    padding-right: 32px;
+  }
+
+  .home-section{
+    margin: 128px auto;
+  }
+}
+
 @media(max-width: $main-breakpoint){
   .home-hero{
     height: 60vw;
+  }
+}
+
+@media (max-width: $mobile-breakpoint){
+  .home-block{
+    width: calc(100% + 48px);
+    position: relative;
+    left: -24px;
   }
 }

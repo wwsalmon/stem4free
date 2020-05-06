@@ -1,11 +1,23 @@
 <?php get_header();
 ?>
 <div class="home-hero" style="background-image: url('<?php echo get_theme_mod('s4f-home-image'); ?>');"></div>
-<div class="home-top container">
-
-</div>
-<div class="home-section container">
-    <h1>Our Impact</h1>
+<div class="home-sections">
+<?php
+$home_blocks = get_posts(array("post_type" => "home_blocks"));
+foreach ($home_blocks as $block){
+    ?>
+    <div class="home-section container">
+        <div class="home-heading">
+            <div class="home-heading-topper"></div>
+            <h1><?php echo $block->post_title ?></h1>
+        </div>
+        <div class="home-block">
+            <?php echo $block->post_content ?>
+        </div>
+    </div>
+    <?php
+}
+?>
 </div>
     <div class="container">
         <?php
