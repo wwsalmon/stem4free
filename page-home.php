@@ -39,6 +39,7 @@ foreach ($hero_images as $index=>$hero_image){
     const heroCaptions = document.querySelectorAll(".hero-caption");
     const heroCounter = document.getElementById("hero-button-counter");
     const numImages = heroImages.length;
+    const sliderSpeed = <?php echo get_theme_mod("s4f-slider-speed", 3) * 1000; ?>
 
     let currInd = 0;
     heroImages[currInd].className += " show";
@@ -65,7 +66,7 @@ foreach ($hero_images as $index=>$hero_image){
         heroCaptions[currInd].className += " show";
     }
 
-    setInterval(() => changeHero(true), 3000);
+    setInterval(() => changeHero(true), sliderSpeed);
 
 </script>
 
