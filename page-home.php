@@ -1,12 +1,73 @@
 <?php get_header();
 ?>
-    <div class="home-hero" style="background-image: url('<?php echo get_theme_mod('s4f-home-image'); ?>');"></div>
+<div class="home-hero-container">
+<?php
+$hero_images = get_posts(array("post_type" => "hero_images"));
+foreach ($hero_images as $index=>$hero_image){
+    ?>
+    <div class="home-hero" id="home-hero-<?php echo $index ?>" style="background-image: url('<?php echo get_the_post_thumbnail_url($hero_image->ID) ?>');"></div>
+    <?php
+}
+
+?>
+</div>
 
     <div class="home-top container">
-        <div class="home-block">
+        <div class="home-block home-block-caption">
+            <div class="hero-buttons">
+                <div class="hero-button" id="hero-button-prev" onclick="changeHero(false)"><span>&lt;</span></div>
+                <div class="hero-button"><span id="hero-button-counter"></span></div>
+                <div class="hero-button" id="hero-button-next" onclick="changeHero(true)"><span>&gt;</span></div>
+            </div>
+            <div class="hero-captions">
+                <?php
+                foreach ($hero_images as $index=>$hero_image){
+                    ?>
+                    <div class="hero-caption" id="hero-caption-<?php echo $index ?>"><span><?php echo date("F j, Y", strtotime($hero_image->post_date)) . ": " . $hero_image->post_content ?></span></div>
+                    <?php
+                }
+                ?>
+            </div>
+        </div>
+        <div class="home-block home-block-main">
             <?php the_post(); the_content() ?>
         </div>
     </div>
+
+<script>
+    const heroImages = document.querySelectorAll(".home-hero");
+    const heroCaptions = document.querySelectorAll(".hero-caption");
+    const heroCounter = document.getElementById("hero-button-counter");
+    const numImages = heroImages.length;
+
+    let currInd = 0;
+    heroImages[currInd].className += " show";
+    heroCaptions[currInd].className += " show";
+    heroCounter.innerHTML = (currInd + 1) + "/" + numImages;
+
+    function changeHero(next){
+        heroImages[currInd].classList.remove("show");
+        heroCaptions[currInd].classList.remove("show");
+        if (next){
+            currInd++;
+            if (currInd == numImages){
+                currInd = 0;
+            }
+        }
+        else{
+            currInd--;
+            if (currInd < 0){
+                currInd = numImages - 1;
+            }
+        }
+        heroCounter.innerHTML = (currInd + 1) + "/" + numImages;
+        heroImages[currInd].className += " show";
+        heroCaptions[currInd].className += " show";
+    }
+
+    setInterval(() => changeHero(true), 3000);
+
+</script>
 
     <div class="home-sections">
         <?php
