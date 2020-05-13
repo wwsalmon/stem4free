@@ -1,7 +1,26 @@
+$image-overlap: 200px;
+
+.blog-top{
+  background-color: $s4f-tan;
+  padding-top: 48px;
+  padding-bottom: 32px;
+
+  .blog-top-inner{
+    max-width: $content-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 24px;
+  }
+
+  &.post-with-image{
+    padding-bottom: $image-overlap;
+  }
+}
+
 .content-container{
   padding-top: 32px;
 
-  p, ul, ol, blockquote, h2, h3, h4, h5, h6{
+  p, ul, ol, blockquote, h2, h3, h4, h5, h6, .wp-block-image, .blog-top-inner{
     max-width: $content-width;
     margin-left: auto;
     margin-right: auto;
@@ -13,6 +32,10 @@
 
   blockquote{
     padding-left: 2em;
+  }
+
+  &.post-with-image{
+    margin-top: -$image-overlap;
   }
 }
 
