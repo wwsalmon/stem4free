@@ -26,3 +26,37 @@ img{
 .container{
   @include container;
 }
+
+footer{
+  color: #fff;
+  background-color: #222;
+  margin-top: 64px;
+  padding: 1px 0; // to get container margins to properly expand footer height
+
+  .footer-left{
+    min-width: 240px;
+    padding-right: 32px;
+
+    img{
+      max-height: 160px;
+    }
+  }
+
+  .footer-right{
+    width: 100%;
+    margin-left: auto;
+    max-width: 1000px;
+
+    .footer-menu{
+      display: flex;
+      justify-content: flex-end;
+
+      .footer-menu-item a{
+        font-family: 'Roboto Mono';
+        color: #fff;
+        margin-left: 16px;
+        font-size: 16px;
+      }
+    }
+  }
+}
