@@ -106,6 +106,18 @@ foreach ($hero_images as $index=>$hero_image){
                 </div>
             </div>
         </div>
+        <div class="home-section container home-ig-section">
+            <div class="home-heading">
+                <div class="home-heading-topper"></div>
+                <h1>Instagram</h1>
+            </div>
+            <div class="home-ig">
+                <?php echo do_shortcode("[instagram-feed cols=3 num=6 imagepadding=0 showbutton=false showfollow=false]"); ?>
+                <div class="home-blog-more" style="padding-top: 24px;">
+                    <a href="https://www.instagram.com/stem4free/"><div class="home-blog-button">Follow Our Instagram ></div></a>
+                </div>
+            </div>
+        </div>
     </div>
 <?php
 get_footer();

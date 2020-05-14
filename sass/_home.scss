@@ -97,10 +97,14 @@
   margin: 64px 0;
 }
 
-.home-blog-posts, .home-block{
+.home-blog-posts, .home-ig, .home-block{
   margin-left: auto;
   width: 100%;
   max-width: 1000px;
+}
+
+.home-ig #sbi_load a, .home-ig #sbi_load a span{
+  font-size: 20px;
 }
 
 .home-blog .article-item{
