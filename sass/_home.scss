@@ -235,8 +235,16 @@ div.home-section:nth-of-type(2) .home-block{
       order: 2;
     }
 
+    #hero-button-next, #hero-button-prev{
+      &:hover{
+        background-color: #fff;
+        color: #222;
+        cursor: pointer;
+      }
+    }
+
     .hero-caption{
-      padding: 12px 16px 12px 0px;
+      padding: 12px 24px 12px 0px;
     }
   }
 }
