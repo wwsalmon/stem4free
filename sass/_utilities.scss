@@ -3,14 +3,22 @@
   margin-right: auto;
 }
 
+@mixin container{
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
 .margin-center{
   @include margin-center;
 }
 
+.container{
+  @include container;
+}
+
 .container-1200{
   max-width: 1200px;
-  padding-left: 24px;
-  padding-right: 24px;
+  @include container;
   @include margin-center;
 }
 
@@ -66,6 +74,7 @@
 
 .font-mono{
   font-weight: 700;
+  font-size: 16px;
   font-family: "Roboto Mono";
 }
 
@@ -81,8 +90,12 @@
   font-size: 24px;
 }
 
-.font-l-responsive{ // changes to 32px at 600px breakpoint
+.font-m-responsive{ // changes to 32px at 600px breakpoint
   font-size: 24px;
+}
+
+.font-l-responsive{ // changes to 42px at 600px breakpoint
+  font-size: 28px;
 }
 
 .font-xl-responsive{ // changes to 90px at 600px breakpoint
@@ -145,8 +158,12 @@
     font-size: unset;
   }
 
-  .font-l-responsive{
+  .font-m-responsive{
     font-size: 32px;
+  }
+
+  .font-l-responsive{
+    font-size: 42px;
   }
 
   .font-xl-responsive{
