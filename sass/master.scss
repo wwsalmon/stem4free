@@ -1,14 +1,1 @@
-$main-width: 1400px;
-$content-width: 800px;
-$main-breakpoint: 1000px;
-$mobile-breakpoint: 600px;
-
-$sz-navbar-item-margin-hor: 32px;
-$navbar-logo-height: 32px;
-
-@import 'colors';
 @import 'sz-navbar';
-@import 'general';
-@import 'navbar';
-@import 'home';
-@import 'content';
