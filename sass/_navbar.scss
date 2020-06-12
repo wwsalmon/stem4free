@@ -1,16 +1,18 @@
+.s4f-navbar{
+  .navbar-logo{
+    display: flex;
+    align-items: center;
+
+    img{
+      height: 36px;
+    }
+  }
+}
+
 @media (min-width: 600px){
   .s4f-navbar{
     .sz-navbar-items .sz-navbar-item{
       margin-left: 24px;
-    }
-
-    .navbar-logo{
-      display: flex;
-      align-items: center;
-
-      img{
-        height: 36px;
-      }
     }
   }
 }
