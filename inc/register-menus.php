@@ -3,7 +3,8 @@ function s4f_register_menus()
 {
     add_theme_support('menus');
     register_nav_menus(array(
-        'primary' => __('Home Navigation')
+        'navbar' => __('Navbar Menu'),
+        'footer' => __('Footer Menu')
     ));
 }
 

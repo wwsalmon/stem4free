@@ -26,7 +26,7 @@ wp_head();
         <label for="sz-navbar-check" class="sz-navbar-hamburger">☰</label>
         <div class="sz-navbar-items font-mono font-bold font-16">
             <?php
-            foreach (get_menu_items_by_registered_slug("primary") as $item){
+            foreach (get_menu_items_by_registered_slug("navbar") as $item){
                 echo "<div class=\"sz-navbar-item ml-3\"><span><a href=\"" . $item->url . "\">" . $item->title . "</a></span></div>";
             }
             ?>
