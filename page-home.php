@@ -50,8 +50,8 @@
                 <div class="font-mono-uppercase"><span><?php echo get_theme_mod("s4f-col3-header", "Latest Updates & Blog Posts") ?></span></div>
                 <div class="mt-4">
                     <?php
-                    $posts = get_posts(array("posts_per_page"=>4));
-                    foreach ($posts as $post){
+                    $recentposts = get_posts(array("posts_per_page"=>4));
+                    foreach ($recentposts as $recentpost){
                         get_template_part("template_parts/home-post");
                     }
                     ?>
@@ -60,7 +60,14 @@
             </div>
         </div>
     </div>
-    <div class="container-1200"><!--IMAGE GALLERY--></div>
+    <div class="container-1200 pt-6 pb-6"><?php
+        if (have_posts()):
+        while (have_posts()): the_post();
+        the_content();
+        endwhile;
+        endif;
+        ?>
+    </div>
 </div>
 
 <?php
