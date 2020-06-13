@@ -35,19 +35,19 @@
     <div class="container-1200 pt-4 pb-4">
         <div class="grid-three-col grid-with-dividers">
             <div class="border-grid-child">
-                <div class="font-mono-uppercase"><span>Completely Student Run</span></div>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum.</p>
-                <a href="./branches">
-                    <div class="p-3 text-center font-mono font-16 bg-gray-3"><span>Join 300+ Student Volunteers</span></div>
+                <div class="font-mono-uppercase"><span><?php echo get_theme_mod("s4f-col1-header", "Completely Student Run") ?></span></div>
+                <p><?php echo get_theme_mod("s4f-col1-text", "Run by high school students, from leadership down to volunteers. If you're a student, join us today!") ?></p>
+                <a href="<?php echo get_permalink(get_theme_mod("s4f-col1-link-page","Branches")); ?>">
+                    <div class="p-3 text-center font-mono font-16 bg-gray-3"><span><?php echo get_theme_mod("s4f-col1-link-text", "Join 100+ Student Volunteers") ?></span></div>
                 </a>
             </div>
             <div class="border-grid-child">
-                <div class="font-mono-uppercase"><span>25 Business Partners</span></div>
-                <p>Businesses donate either regularly or whenever they have leftover food. Our volunteers pick up food from businesses and deliver it to food pantries, homeless shelters, and other organizations.</p>
-                <div class="text-right font-mono font-16"><a href="">More info for businesses ></a></div>
+                <div class="font-mono-uppercase"><span><?php echo get_theme_mod("s4f-col2-header", "For Business Partners") ?></span></div>
+                <p><?php echo get_theme_mod("s4f-col2-text", "Businesses donate either regularly or whenever they have leftover food. Our volunteers pick up food from businesses and deliver it to food pantries, homeless shelters, and other organizations.") ?></p>
+                <div class="text-right font-mono font-16"><a href="<?php echo get_permalink(get_theme_mod("s4f-col2-link-page")); ?>"><?php echo get_theme_mod("s4f-col2-link-text", "More info for businesses") ?> ></a></div>
             </div>
             <div class="border-grid-child">
-                <div class="font-mono-uppercase"><span>Latest Updates & Blog Posts</span></div>
+                <div class="font-mono-uppercase"><span><?php echo get_theme_mod("s4f-col3-header", "Latest Updates & Blog Posts") ?></span></div>
                 <div class="mt-4">
                     <?php
                     $posts = get_posts(array("posts_per_page"=>4));
@@ -56,7 +56,7 @@
                     }
                     ?>
                 </div>
-                <div class="text-right font-mono font-16"><a href="">More Posts ></a></div>
+                <div class="text-right font-mono font-16"><a href="<?php echo get_permalink(get_theme_mod("s4f-col3-link-page")); ?>"><?php echo get_theme_mod("s4f-col3-link-text", "More posts") ?> ></a></div>
             </div>
         </div>
     </div>
