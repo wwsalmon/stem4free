@@ -26,6 +26,7 @@ function s4f_script_enqueue()
     wp_add_inline_style("customstyle", $loadStateFace);
     wp_enqueue_style('google_fonts', gf_url(), false, NULL, 'all' );
     wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css', false, NULL, 'all' );
+    wp_enqueue_script("d3-format", "https://d3js.org/d3-format.v1.min.js", false, NULL, false);
 }
 
 add_action('wp_enqueue_scripts', 's4f_script_enqueue');

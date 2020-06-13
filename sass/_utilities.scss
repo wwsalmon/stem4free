@@ -35,6 +35,10 @@
   width: 32px;
 }
 
+.width-120{
+  width: 120px;
+}
+
 .height-48{
   height: 48px;
 }
@@ -78,7 +82,7 @@
   font-family: "Roboto Mono";
 }
 
-.font-12{
+.font-12, .font-12-lt-600{
   font-size: 12px;
 }
 
@@ -88,6 +92,10 @@
 
 .font-24{
   font-size: 24px;
+}
+
+.font-42{
+  font-size: 42px;
 }
 
 .font-m-responsive{ // changes to 32px at 600px breakpoint
@@ -121,7 +129,11 @@
   font-weight: 700;
 }
 
-.grid-three-col{
+.font-normal{
+  font-weight: 400;
+}
+
+.grid-three-col, .grid-three-col-small{
   position: relative;
   display: grid;
   grid-column-gap: 48px;
@@ -143,19 +155,48 @@
   display: flex;
 }
 
-.border-bottom-lt-1200{
+.flex-0{
+  flex-grow: 0;
+}
+
+.flex-1{
+  flex-grow: 1;
+}
+
+.border-grid-child{
   border-bottom: 1px solid rgba(0,0,0,0.2);
   padding-bottom: 32px;
   margin-bottom: 32px;
 }
 
-.bg-gray-3 .border-bottom-lt-1200{
+.bg-gray-3 .border-grid-child{
   border-color: rgba(255,255,255,0.2);
 }
 
+@media (min-width: 460px){
+  .grid-three-col-small{
+    grid-template-columns: repeat(2, minmax(0,1fr));
+
+    &.grid-with-dividers {
+      &:before {
+        left: 50%;
+        background-color: #000;
+      }
+    }
+  }
+
+  .bg-gray-3 .grid-three-col-small.grid-with-dividers:before{
+    background-color: #fff;
+  }
+}
+
 @media (min-width: 600px){
+  .font-12-lt-600{
+    font-size: 16px;
+  }
+
   .font-16-lt-600{
-    font-size: unset;
+    font-size: 20px;
   }
 
   .font-m-responsive{
@@ -168,6 +209,33 @@
 
   .font-xl-responsive{
     font-size: 90px;
+  }
+}
+
+@media (min-width: 700px){
+  .grid-three-col-small{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    &.grid-with-dividers{
+      &:before{
+        left: calc(33.3% - 4px);
+      }
+
+      &:after{
+        left: calc(66.7% + 4px);
+        background-color: #000;
+      }
+    }
+
+    .border-grid-child{
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .bg-gray-3 .grid-three-col-small.grid-with-dividers:after{
+    background-color: #fff;
   }
 }
 
@@ -202,16 +270,16 @@
         background-color: #000;
       }
     }
+
+    .border-grid-child{
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
   }
 
   .bg-gray-3 .grid-three-col.grid-with-dividers:after{
     background-color: #fff;
-  }
-
-  .border-bottom-lt-1200{
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 0;
   }
 }
 

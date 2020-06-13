@@ -1,6 +1,6 @@
 <?php get_header();
 ?>
-    <div class="width-700 container mt-6 pt-6">
+    <div class="width-700 container mt-6 pt-6 pb-6 page-container">
 		<?php
 		if (have_posts()):
 			while (have_posts()): the_post();
