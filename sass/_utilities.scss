@@ -16,6 +16,12 @@
   @include container;
 }
 
+.center-vert{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .container-1200{
   max-width: 1200px;
   @include container;
@@ -43,6 +49,10 @@
   height: 48px;
 }
 
+.height-300{
+  height: 300px;
+}
+
 .opacity-20{
   opacity: 0.2;
 }
@@ -57,6 +67,10 @@
 
 .hover-opacity-100:hover{
   opacity: 1.0;
+}
+
+.bg-white{
+  background-color: #ffffff;
 }
 
 .bg-gray-1{
@@ -82,6 +96,13 @@
 
 .text-right{
   text-align: right;
+}
+
+.font-mono-uppercase{
+  font-family: "Roboto Mono";
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .font-mono{
@@ -116,13 +137,6 @@
 
 .font-xl-responsive{ // changes to 90px at 600px breakpoint
   font-size: 64px;
-}
-
-.font-mono-uppercase{
-  font-family: "Roboto Mono";
-  text-transform: uppercase;
-  font-size: 16px;
-  font-weight: 700;
 }
 
 .font-bold{
@@ -167,11 +181,20 @@
   }
 }
 
+.relative{
+  position: relative;
+}
+
+.top-neg-240{
+  top: -240px;
+}
+
 .flex{
   display: flex;
 }
 
 .flex-0{
+  flex-shrink: 0;
   flex-grow: 0;
 }
 

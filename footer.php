@@ -12,7 +12,7 @@
             ?>
         </div>
         <div class="border-grid-child">
-            <div class="font-mono-uppercase mb-1"><span>Branches</span></div>
+            <div class="font-mono-uppercase mb-1"><span><a href="<?php echo get_home_url() ?>/branches">Branches</a></span></div>
 	        <?php
 	        foreach (get_menu_items_by_registered_slug("branches") as $item){
 		        echo "<div class=\"font-mono mb-1 opacity-20 hover-opacity-100\"><span><a href=\"" . $item->url . "\">" . $item->title . "</a></span></div>";
