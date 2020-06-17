@@ -1,9 +1,10 @@
 <?php get_header();
 ?>
 <div class="container-1200 mt-6 mb-6 pt-4">
-    <p class="font-m-responsive width-700 text-center line-height-12">Stem4Free is a nonprofit corporation dedicated to food rescue and food waste awareness.</p>
-    <h1 class="font-xl-responsive text-center"><span id="s4f-total-counter">9,000+</span> meals rescued</h1>
-    <p class="width-700 text-center font-mono font-16-lt-600 link-underline"><span class="opacity-20">in <span id="s4f-top-branch">Texas (6,800+)</span>, <span id="s4f-second-branch">California (800+)</span>, and <a href="./branches">9 other locations</a>, </span><span class="opacity-60">with 1,000+ meals rescued in the last week.</span></p>
+    <p class="font-m-responsive width-700 text-center line-height-12"><?php echo get_theme_mod("s4f-hero-text", "Stem4Free is a nonprofit corporation dedicated to food rescue and food waste awareness.") ?></p>
+    <h1 class="font-xl-responsive text-center"><span id="s4f-total-counter"><?php echo get_theme_mod("s4f-stat-total-fallback", "9,000+") ?></span> meals rescued</h1>
+    <p class="width-700 text-center font-mono font-16-lt-600 link-underline" id="s4f-stats-last"><span class="opacity-20">in <span id="s4f-top-branch"><?php echo get_theme_mod("s4f-stat-state-1-fallback", "Texas (6,800+)") ?></span>, <span id="s4f-second-branch"><?php echo get_theme_mod("s4f-stat-state-2-fallback", "California (800+)") ?></span>, and <a href="./branches"><?php echo get_theme_mod("s4f-num-other-locations", "9") ?> other locations</a>, </span><span class="opacity-60">with <span id="s4f-past-week"><?php echo get_theme_mod("s4f-stat-last-week-fallback", "1,000+") ?></span> meals rescued in the last week.</span></p>
+
     <script>
         fetch("https://spreadsheets.google.com/feeds/cells/1AiJWX3EvgGMYiRtnN_4aiAyNjbEKrM1Y7eq8-p-ASXw/1/public/full?alt=json")
         .then(async res => {
@@ -13,12 +14,16 @@
 
             const totalLabel = allLabels.find(el => el[0] === "All");
             const totalNum = spreadsheetEntries.find(el => el[1] === totalLabel[1] && el[2] === 2);
+            const pastWeekNum = spreadsheetEntries.find(el => el[1] === totalLabel[1] && el[2] === 3);
 
             const otherLabels = allLabels.filter(el => el[0] !== "All");
             const otherNums = otherLabels.map(el => [el[0], +spreadsheetEntries.find(en => en[1] === el[1] && en[2] === 2)[0]]).sort((a, b) => b[1] - a[1]);
 
             const totalNumFormatted = d3.format(",")(totalNum[0]);
             document.getElementById("s4f-total-counter").textContent = totalNumFormatted;
+
+            const pastWeekNumFormatted = d3.format(",")(pastWeekNum[0]);
+            document.getElementById("s4f-past-week").textContent = pastWeekNumFormatted;
 
             const highestBranch = otherNums[0][0];
             const highestBranchNum = d3.format(",")(otherNums[0][1]);
@@ -27,6 +32,9 @@
             const secondBranch = otherNums[1][0];
             const secondBranchNum = d3.format(",")(otherNums[1][1]);
             document.getElementById("s4f-second-branch").innerHTML = `<a href='./${secondBranch.replace(/\s+/g, '-').toLowerCase()}'>${secondBranch} (${secondBranchNum})</a>`;
+
+            const liveData = "<div class=\"width-120 margin-center font-12 p-1 bg-gray-3 text-center font-mono-uppercase opacity-20 mt-4\">Live Data</div>";
+            document.getElementById("s4f-stats-last").insertAdjacentHTML("afterend", liveData);
         })
         .catch(err => console.log(err));
     </script>

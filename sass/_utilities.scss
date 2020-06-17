@@ -81,9 +81,13 @@
   background-color: #cccccc;
 }
 
-.bg-gray-3{
+@mixin bg-gray-3{
   background-color: #222222;
   color: #fff;
+}
+
+.bg-gray-3{
+  @include bg-gray-3;
 }
 
 .hover-gray-1:hover{
@@ -105,10 +109,14 @@
   font-weight: 700;
 }
 
-.font-mono{
+@mixin font-mono{
   font-weight: 700;
   font-size: 16px;
   font-family: "Roboto Mono";
+}
+
+.font-mono{
+  @include font-mono;
 }
 
 .font-12, .font-12-lt-600{
@@ -143,7 +151,7 @@
   font-weight: 700;
 }
 
-.page-container a.font-no-underline{
+.page-container a.font-no-underline, .page-container .font-no-underline a{
   text-decoration: none;
 }
 
@@ -187,6 +195,10 @@
 
 .top-neg-240{
   top: -240px;
+}
+
+.inline-block{
+  display: inline-block;
 }
 
 .flex{
@@ -374,8 +386,12 @@
   padding: 8px;
 }
 
-.p-2{
+@mixin p-2{
   padding: 16px;
+}
+
+.p-2{
+  @include p-2;
 }
 
 .p-3{

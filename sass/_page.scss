@@ -10,3 +10,12 @@
 .page-container a{
   text-decoration: underline;
 }
+
+.page-numbers{
+  @include p-2;
+  @include font-mono;
+}
+
+a.page-numbers{
+  @include bg-gray-3;
+}
