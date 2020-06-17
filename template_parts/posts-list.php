@@ -32,4 +32,5 @@ if ( have_posts() ):
 	<?php
 	endwhile;
 endif;
+echo "<div class='pt-4 font-no-underline'>" . paginate_links() . "</div>";
 ?>
