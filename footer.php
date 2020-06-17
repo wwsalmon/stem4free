@@ -2,7 +2,7 @@
     <div class="container-1200 grid-three-col grid-with-dividers">
         <div class="border-grid-child">
             <img class="height-48" src="<?php echo get_template_directory_uri() ?>/img/logo-small.png">
-            <p>Stem4Free is a nonprofit corporation dedicated to food rescue and food waste awareness.</p>
+            <p><?php echo get_theme_mod("s4f-footer-blurb", "Stem4Free is a nonprofit corporation dedicated to food rescue and food waste awareness.") ?></p>
         </div>
         <div class="border-grid-child">
             <?php

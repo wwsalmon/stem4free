@@ -4,6 +4,60 @@ function s4f_customizer($wp_customize)
     $wp_customize->add_section('s4f-section', array(
         'title' => "Stem4Free Custom Settings"
     ));
+	$wp_customize->add_setting("s4f-hero-text", array(
+		"default" => "Stem4Free is a nonprofit corporation dedicated to food rescue and food waste awareness."
+	));
+	$wp_customize->add_control("s4f-hero-text-control", array(
+		"label" => "Text for homepage hero text",
+		"type" => "string",
+		"section" => "s4f-section",
+		"settings" => "s4f-hero-text"
+	));
+	$wp_customize->add_setting("s4f-stat-total-fallback", array(
+		"default" => "9,000+"
+	));
+	$wp_customize->add_control("s4f-stat-total-fallback-control", array(
+		"label" => "Default text for homepage total meals rescued statistic before spreadsheet data loads in",
+		"type" => "string",
+		"section" => "s4f-section",
+		"settings" => "s4f-stat-total-fallback"
+	));
+	$wp_customize->add_setting("s4f-stat-state-1-fallback", array(
+		"default" => "Texas (6,800+)"
+	));
+	$wp_customize->add_control("s4f-stat-state-1-fallback-control", array(
+		"label" => "Default text for homepage top state statistic before spreadsheet data loads in",
+		"type" => "string",
+		"section" => "s4f-section",
+		"settings" => "s4f-stat-state-1-fallback"
+	));
+	$wp_customize->add_setting("s4f-stat-state-2-fallback", array(
+		"default" => "California (800+)"
+	));
+	$wp_customize->add_control("s4f-stat-state-2-fallback-control", array(
+		"label" => "Default text for homepage second top state statistic before spreadsheet data loads in",
+		"type" => "string",
+		"section" => "s4f-section",
+		"settings" => "s4f-stat-state-2-fallback"
+	));
+	$wp_customize->add_setting("s4f-stat-num-other-locations", array(
+		"default" => "9"
+	));
+	$wp_customize->add_control("s4f-stat-num-other-locations-control", array(
+		"label" => "Number of other locations (total num of locations - 2)",
+		"type" => "string",
+		"section" => "s4f-section",
+		"settings" => "s4f-stat-num-other-locations"
+	));
+	$wp_customize->add_setting("s4f-stat-last-week-fallback", array(
+		"default" => "1,000+"
+	));
+	$wp_customize->add_control("s4f-stat-last-week-fallback-control", array(
+		"label" => "Default text for homepage meals rescued last week statistic before spreadsheet data loads in",
+		"type" => "string",
+		"section" => "s4f-section",
+		"settings" => "s4f-stat-last-week-fallback"
+	));
 	$wp_customize->add_setting("s4f-col1-header", array(
 		"default" => "Completely Student Run"
 	));
@@ -96,6 +150,15 @@ function s4f_customizer($wp_customize)
 		"type" => "dropdown-pages",
 		"section" => "s4f-section",
 		"settings" => "s4f-col3-link-page"
+	));
+	$wp_customize->add_setting("s4f-footer-blurb", array(
+		"default" => "Stem4Free is a nonprofit corporation dedicated to food rescue and food waste awareness."
+	));
+	$wp_customize->add_control("s4f-footer-blurb-control", array(
+		"label" => "Blurb that appears in left column of site footer",
+		"type" => "textarea",
+		"section" => "s4f-section",
+		"settings" => "s4f-footer-blurb"
 	));
 /*    $wp_customize->add_setting('s4f-home-image');
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 's4f-home-image-control', array(
