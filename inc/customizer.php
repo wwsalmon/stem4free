@@ -17,7 +17,7 @@ function s4f_customizer($wp_customize)
 		"default" => "9,000+"
 	));
 	$wp_customize->add_control("s4f-stat-total-fallback-control", array(
-		"label" => "Default text for homepage total meals rescued statistic before spreadsheet data loads in",
+		"label" => "Default text for homepage total servings rescued statistic before spreadsheet data loads in",
 		"type" => "string",
 		"section" => "s4f-section",
 		"settings" => "s4f-stat-total-fallback"
@@ -53,7 +53,7 @@ function s4f_customizer($wp_customize)
 		"default" => "1,000+"
 	));
 	$wp_customize->add_control("s4f-stat-last-week-fallback-control", array(
-		"label" => "Default text for homepage meals rescued last week statistic before spreadsheet data loads in",
+		"label" => "Default text for homepage servings rescued last week statistic before spreadsheet data loads in",
 		"type" => "string",
 		"section" => "s4f-section",
 		"settings" => "s4f-stat-last-week-fallback"

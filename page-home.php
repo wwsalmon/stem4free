@@ -2,8 +2,8 @@
 ?>
 <div class="container-1200 mt-6 mb-6 pt-4">
     <p class="font-m-responsive width-700 text-center line-height-12"><?php echo get_theme_mod("s4f-hero-text", "Stem4Free is a nonprofit corporation dedicated to food rescue and food waste awareness.") ?></p>
-    <h1 class="font-xl-responsive text-center"><span id="s4f-total-counter"><?php echo get_theme_mod("s4f-stat-total-fallback", "9,000+") ?></span> meals rescued</h1>
-    <p class="width-700 text-center font-mono font-16-lt-600 link-underline" id="s4f-stats-last"><span class="opacity-20">in <span id="s4f-top-branch"><?php echo get_theme_mod("s4f-stat-state-1-fallback", "Texas (6,800+)") ?></span>, <span id="s4f-second-branch"><?php echo get_theme_mod("s4f-stat-state-2-fallback", "California (800+)") ?></span>, and <a href="./branches"><?php echo get_theme_mod("s4f-num-other-locations", "9") ?> other locations</a>, </span><span class="opacity-60">with <span id="s4f-past-week"><?php echo get_theme_mod("s4f-stat-last-week-fallback", "1,000+") ?></span> meals rescued in the last week.</span></p>
+    <h1 class="font-xl-responsive text-center"><span id="s4f-total-counter"><?php echo get_theme_mod("s4f-stat-total-fallback", "9,000+") ?></span> servings rescued</h1>
+    <p class="width-700 text-center font-mono font-16-lt-600 link-underline" id="s4f-stats-last"><span class="opacity-20">in <span id="s4f-top-branch"><?php echo get_theme_mod("s4f-stat-state-1-fallback", "Texas (6,800+)") ?></span>, <span id="s4f-second-branch"><?php echo get_theme_mod("s4f-stat-state-2-fallback", "California (800+)") ?></span>, and <a href="./branches"><?php echo get_theme_mod("s4f-num-other-locations", "9") ?> other locations</a>, </span><span class="opacity-60">with <span id="s4f-past-week"><?php echo get_theme_mod("s4f-stat-last-week-fallback", "1,000+") ?></span> servings rescued in the last week.</span></p>
 
     <script>
         fetch("https://spreadsheets.google.com/feeds/cells/1AiJWX3EvgGMYiRtnN_4aiAyNjbEKrM1Y7eq8-p-ASXw/1/public/full?alt=json")
