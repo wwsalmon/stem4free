@@ -55,17 +55,28 @@
                 <div class="text-right font-mono font-16"><a href="<?php echo get_permalink(get_theme_mod("s4f-col2-link-page")); ?>"><?php echo get_theme_mod("s4f-col2-link-text", "More info for businesses") ?> ></a></div>
             </div>
             <div class="border-grid-child">
-                <div class="font-mono-uppercase"><span><?php echo get_theme_mod("s4f-col3-header", "Latest Updates & Blog Posts") ?></span></div>
-                <div class="mt-4">
-                    <?php
-                    $mainpost = $post;
-                    $recentposts = get_posts(array("posts_per_page"=>4));
-                    foreach ($recentposts as $post){
-                        get_template_part("template_parts/home-post");
-                    }
-                    ?>
+                <div class="font-mono-uppercase"><span><?php echo get_theme_mod("s4f-col3-header", "Subscribe to our newsletter") ?></span></div>
+                <p class="link-underline"><?php echo get_theme_mod("s4f-col2-text", "Get updates on our work and developments each month. (<a href='http://instagram.com/stem4free'>Follow us on <i class=\"fab fa-instagram font-16\"></i> Instagram</a> too!) ") ?></p>
+                <!-- Begin Mailchimp Signup Form -->
+                <div id="mc_embed_signup">
+                    <form action="https://stem4free.us10.list-manage.com/subscribe/post?u=00e8bb567cb828945093b6386&amp;id=45ee875717" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll" class="flex">
+
+                            <div class="mc-field-group flex-1">
+                                <input type="email" placeholder="Enter your email" name="EMAIL" class="required email width-full height-48 border-none font-mono pl-2 pr-2" id="mce-EMAIL">
+                            </div>
+                            <div id="mce-responses" class="clear">
+                                <div class="response" id="mce-error-response" style="display:none"></div>
+                                <div class="response" id="mce-success-response" style="display:none"></div>
+                            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_00e8bb567cb828945093b6386_45ee875717" tabindex="-1" value=""></div>
+                            <div class="clear">
+                                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="height-48 border-none pl-2 pr-2 bg-gray-3 font-mono"></div>
+                        </div>
+                    </form>
                 </div>
-                <div class="text-right font-mono font-16"><a href="<?php echo get_permalink(get_theme_mod("s4f-col3-link-page")); ?>"><?php echo get_theme_mod("s4f-col3-link-text", "More posts") ?> ></a></div>
+                <!--End mc_embed_signup-->
+<!--                <div class="text-right font-mono font-16"><a href="--><?php //echo get_permalink(get_theme_mod("s4f-col3-link-page")); ?><!--">--><?php //echo get_theme_mod("s4f-col3-link-text", "More posts") ?><!-- ></a></div>-->
             </div>
         </div>
     </div>
@@ -77,6 +88,16 @@
         endwhile;
         endif;
         ?>
+    </div>
+</div>
+
+<div class="width-full">
+    <div class="width-700 container pt-6 pb-6">
+        <hr class="mb-6"/>
+        <h1 class="font-l-responsive text-center mb-6">The Latest from Stem4Free</h1>
+        <?php get_template_part("template_parts/posts-list"); ?>
+        <div class="text-center font-mono font-16"><a href="<?php echo get_home_url() . "/blog" ?>">More posts ></a></div>
+        <hr class="mt-6"/>
     </div>
 </div>
 

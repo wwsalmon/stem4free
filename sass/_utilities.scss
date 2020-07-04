@@ -90,6 +90,11 @@
   @include bg-gray-3;
 }
 
+.border-none{
+  border: 0;
+  outline: 0;
+}
+
 .hover-gray-1:hover{
   background-color: #f2f2f2;
 }
@@ -380,6 +385,54 @@
 
 .pt-6{
   padding-top: 64px;
+}
+
+.pr-1{
+  padding-right: 8px;
+}
+
+.pr-2{
+  padding-right: 16px;
+}
+
+.pr-3{
+  padding-right: 24px;
+}
+
+.pr-4{
+  padding-right: 32px;
+}
+
+.pr-5{
+  padding-right: 48px;
+}
+
+.pr-6{
+  padding-right: 64px;
+}
+
+.pl-1{
+  padding-left: 8px;
+}
+
+.pl-2{
+  padding-left: 16px;
+}
+
+.pl-3{
+  padding-left: 24px;
+}
+
+.pl-4{
+  padding-left: 32px;
+}
+
+.pl-5{
+  padding-left: 48px;
+}
+
+.pl-6{
+  padding-left: 64px;
 }
 
 .p-1{

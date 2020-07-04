@@ -1,6 +1,16 @@
 <?php
-if ( have_posts() ):
-	while ( have_posts() ): the_post(); ?>
+
+if ( is_front_page() ) {
+	$args       = array(
+		"posts_per_page" => 3,
+	);
+	$this_query = new WP_Query($args);
+} else {
+    $this_query = $GLOBALS['wp_the_query'];
+}
+
+if ( $this_query->have_posts() ):
+	while ( $this_query->have_posts() ): $this_query->the_post(); ?>
 		<div class="flex">
 			<a class="width-120 bg-gray-1 mr-3 flex-0" href="<?php echo get_the_permalink() ?>">
 				<?php

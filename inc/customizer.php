@@ -127,7 +127,7 @@ function s4f_customizer($wp_customize)
 		"settings" => "s4f-col2-link-page"
 	));
 	$wp_customize->add_setting("s4f-col3-header", array(
-		"default" => "Latest Updates & Blog Posts"
+		"default" => "Subscribe to our newsletter"
 	));
 	$wp_customize->add_control("s4f-col3-header-control", array(
 		"label" => "Header for homepage column 3",
@@ -135,15 +135,24 @@ function s4f_customizer($wp_customize)
 		"section" => "s4f-section",
 		"settings" => "s4f-col3-header"
 	));
-	$wp_customize->add_setting("s4f-col3-link-text", array(
-		"default" => "More posts"
+	$wp_customize->add_setting("s4f-col3-text", array(
+		"default" => "Businesses donate either regularly or whenever they have leftover food. Our volunteers pick up food from businesses and deliver it to food pantries, homeless shelters, and other organizations."
 	));
-	$wp_customize->add_control("s4f-col3-link-text-control", array(
+	$wp_customize->add_control("s4f-col3-text-control", array(
 		"label" => "Blurb for homepage column 3",
-		"type" => "string",
+		"type" => "textarea",
 		"section" => "s4f-section",
-		"settings" => "s4f-col3-link-text"
+		"settings" => "s4f-col3-text"
 	));
+//	$wp_customize->add_setting("s4f-col3-link-text", array(
+//		"default" => "More posts"
+//	));
+//	$wp_customize->add_control("s4f-col3-link-text-control", array(
+//		"label" => "Blurb for homepage column 3",
+//		"type" => "string",
+//		"section" => "s4f-section",
+//		"settings" => "s4f-col3-link-text"
+//	));
 	$wp_customize->add_setting("s4f-col3-link-page");
 	$wp_customize->add_control("s4f-col3-link-page-control", array(
 		"label" => "Page for homepage column 3 link",
