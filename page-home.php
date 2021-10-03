@@ -6,9 +6,10 @@
     <p class="width-700 text-center font-mono font-16-lt-600 link-underline" id="s4f-stats-last"><span class="opacity-20">in <span id="s4f-top-branch"><?php echo get_theme_mod("s4f-stat-state-1-fallback", "Texas (6,800+)") ?></span>, <span id="s4f-second-branch"><?php echo get_theme_mod("s4f-stat-state-2-fallback", "California (800+)") ?></span>, and <a href="./branches"><?php echo get_theme_mod("s4f-num-other-locations", "9") ?> other locations</a>, </span><span class="opacity-60">with <span id="s4f-past-week"><?php echo get_theme_mod("s4f-stat-last-week-fallback", "1,000+") ?></span> servings rescued, donated, or financially supported in the last week.</span></p>
 
     <script>
-        fetch("https://spreadsheets.google.com/feeds/cells/1AiJWX3EvgGMYiRtnN_4aiAyNjbEKrM1Y7eq8-p-ASXw/1/public/full?alt=json")
-        .then(async res => {
-            const spreadsheetData = await res.json();
+        fetch("https://docs.google.com/spreadsheets/d/1AiJWX3EvgGMYiRtnN_4aiAyNjbEKrM1Y7eq8-p-ASXw/gviz/tq?tqx=out:json")
+        .then(res => res.text())
+        .then(text => {
+            const spreadsheetData = JSON.parse(text.substr(47).slice(0, -2))
             const spreadsheetEntries = spreadsheetData.feed.entry.map(el => [el.gs$cell.$t, +el.gs$cell.col, +el.gs$cell.row]);
             const allLabels = spreadsheetEntries.filter(el => el[2] === 1);
 
